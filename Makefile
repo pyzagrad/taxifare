@@ -7,4 +7,4 @@ PORT     := 8000
 
 # ── Public targets ─────────────────────────────────
 run-api:  ## Start the FastAPI server (reload on code changes)
-	$(UVICORN) $(APP) --host $(HOST) --port $(PORT) --reload
+	uv run uvicorn api.fast:app
