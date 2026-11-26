@@ -1,7 +1,7 @@
 # ── Variables ───────────────────────────────────────
 PYTHON   := .venv/bin/python
 UVICORN  := .venv/bin/uvicorn
-APP      := api.fast:app
+APP      := api.fastapi:app
 HOST     := 0.0.0.0
 PORT     := 8000
 
