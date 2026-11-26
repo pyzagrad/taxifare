@@ -6,7 +6,7 @@ scale_timedelta,
 manhattan_distance_for_pipe,
 transform_time_features
 '''
-
+# Import necessary libraries
 import pandas as pd
 import numpy as np
 import math
@@ -23,19 +23,11 @@ def scale_passenger(p):
     p_scaled = (p - p_min) / (p_max - p_min)
     return p_scaled
 
-timedelta_min = 0
-timedelta_max = 2190
-
 def scale_timedelta(timedelta):
+    timedelta_min = 0
+    timedelta_max = 2190
     scaled = (timedelta - timedelta_min) / (timedelta_max - timedelta_min)
     return scaled
-
-lonlat_features = [
-    "pickup_latitude",
-    "pickup_longitude",
-    "dropoff_latitude",
-    "dropoff_longitude",
-]
 
 def manhattan_distance_vectorized(df: pd.DataFrame, start_lat: str, start_lon: str, end_lat: str, end_lon: str) -> dict:
     """
@@ -56,6 +48,12 @@ def manhattan_distance_vectorized(df: pd.DataFrame, start_lat: str, start_lon: s
     return manhattan_km
 
 def manhattan_distance_for_pipe(df):
+    lonlat_features = [
+    "pickup_latitude",
+    "pickup_longitude",
+    "dropoff_latitude",
+    "dropoff_longitude",
+    ]
     distance = manhattan_distance_vectorized(df, *lonlat_features)
     return pd.DataFrame({'distance': distance})
 
