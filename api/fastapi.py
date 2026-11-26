@@ -21,10 +21,8 @@ def dummy(number: int):
 
 
 @app.get("/predict")
-def predict_pinguins(number_a:float ,
-            number_b:float ,
-            value_n:int):
-    #The function makes (a*b)^n
-    number = (number_a * number_b)**value_n
+def predict_model(passenger_number:int):
 
-    return {"(a*b)^n" : number}
+    number = passenger_number * 2.5
+
+    return {"number of passenger * 2.5" : number}
