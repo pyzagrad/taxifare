@@ -7,7 +7,9 @@ authors = [
     { name = "PierreYves Girardin", email = "py.girardin@gmail.com" }
 ]
 requires-python = ">=3.12.9"
-dependencies = []
+dependencies = [
+    "pandas<3",
+]
 
 [project.scripts]
 taxifare = "taxifare:main"
