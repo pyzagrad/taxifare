@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 
-
+from taxifare.predict import load_model, predict
 
 # FastAPI instance
 app = FastAPI()
 
+model = load_model("models/linreg_pipeline.joblib")
 
 # Root endpoint
 @app.get("/")
