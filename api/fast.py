@@ -42,4 +42,4 @@ def predict_model(pickup_datetime:str ,
 
     prediction = predict(model,X)
 
-    return {"prediction" : prediction}
+    return {"prediction" : prediction[0]}
