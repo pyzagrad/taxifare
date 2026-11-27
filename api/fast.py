@@ -2,6 +2,7 @@ from fastapi import FastAPI
 # import the load model and predict functions from predict.py file
 from taxifare.predict import load_model, predict
 import pandas as pd
+from datetime import datetime
 
 # FastAPI instance
 app = FastAPI()
@@ -24,7 +25,7 @@ def dummy(number: int):
 
 
 @app.get("/predict")
-def predict_model(pickup_datetime:str ,
+def predict_model(pickup_datetime : datetime,
             pickup_longitude:float ,
             pickup_latitude:float ,
             dropoff_longitude:float,
